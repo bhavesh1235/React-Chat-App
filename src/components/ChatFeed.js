@@ -69,6 +69,15 @@ const ChatFeed = props => {
           {chat.people.map(person => ` ${person.person.username}`)}
         </div>
       </div>
+      <button
+        className="log-btn"
+        onClick={() => {
+          localStorage.removeItem('username');
+          window.location.reload();
+        }}
+      >
+        logout
+      </button>
       {renderMessages()}
       <div style={{ height: '100px' }} />
       <div className="message-form-container">
